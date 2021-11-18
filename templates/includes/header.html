@@ -1,0 +1,15 @@
+<header class="header" id="header">
+    <div class="logo" id="logo">
+      <i class="fa fa-book" aria-hidden="true"></i>
+      <i class="fa fa-headphones" aria-hidden="true"></i>
+    </div>
+    <div class="title" id="title">
+      <h1>Digital Library</h1>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="profile-logo text-white">
+      <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        {{user.name}}</h4>
+    </div>
+    {% endif %}
+  </header>

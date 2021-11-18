@@ -1,0 +1,85 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background-color: #242B2E;
+}
+/* Header styling */
+.header{
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo>i{
+    font-size: 72px;
+    color: #CAD5E2;
+}
+.title>h1{
+    padding: 25px;
+    font-size: 68px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #E5D68A;
+}
+.navbar ul li{
+    margin: 3px;
+    text-decoration: none;
+    border-radius: 10%;
+    padding: 5px;
+}
+.bg-dark{
+    background-color: #242B2E;
+}
+.navbar ul li a{
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 550;
+    letter-spacing: 1px;
+    color: #CAD5E2;
+}
+.profile-logo{
+    color: #CAD5E2;
+}
+/* End header styling */
+
+/* Main content */
+main{
+    min-height: 70vh;
+}
+.main-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CAD5E2;
+}
+.main-content span{
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 550;
+}
+hr{
+    border-top: 1px solid #CAD5E2;
+    width:200;
+}
+.footer{
+    padding: 30px;
+    color: #CAD5E2;
+}
+.footer>.container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.footer p a{
+    text-decoration: none;
+    color: #CAD5E2;
+    padding: 5px;
+}
+/* footer style end */
+span.message{
+    background-color: bisque;
+}

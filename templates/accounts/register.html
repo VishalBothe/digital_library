@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="register-form-container">
+        <h1><i class="fa fa-user" aria-hidden="true"></i></h1>
+        <h1>Create your account</h1>
+        <p>Already have account? <a href="/accounts/signin">sign in</a></p>
+
+        {% include '../includes/messages.html' %}
+        <form class="form" id="signUpForm">
+            {% csrf_token %}
+            <div class="form-group my-4">
+                <label>Full Name</label>
+                {{signUpForm.name}}
+            </div>
+            <div class="form-group my-4">
+                <label>Email</label>
+                {{signUpForm.email}}
+            </div>
+            <div class="form-group">
+                <label>Mobile No</label>
+                {{signUpForm.mobile}}
+            </div>
+            <div class="form-group my-4">
+                <label>Password</label>
+                {{signUpForm.password1}}
+            </div>
+            <div class="form-group my-4">
+                <label>Confirm Password</label>
+                {{signUpForm.password2}}
+            </div>
+            <div class="form-group my-4">
+                <button class="btn btn-outline-success submit-button">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    $("#signUpForm").submit(e => {
+        e.preventDefault();
+        let csrfmiddlewaretoken = $("input[name='csrfmiddlewaretoken']").val();
+        let name = $("#name").val()
+        let email = $("#email").val()
+        let mobile = $("#mobile").val()
+        let password1 = $("#password1").val()
+        let password2 = $("#password2").val()
+
+        if(password1 !== password2){
+            alert("Password do not match!!")
+        }else{
+            $.ajax({
+                url: "signup",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    csrfmiddlewaretoken,
+                    name,
+                    email,
+                    mobile,
+                    password1,
+                },
+                success: res => {
+                    alert("User created!");
+                    window.location.replace('/accounts/signin')
+                },
+                error: err => {
+                    console.log(err)
+                    alert("Something went wrong!!")
+                    $("#signUpForm")[0].reset();
+                    window.location.replace("../")
+                }
+            })
+        }
+    })
+</script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include '../includes/messages.html' %}
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-6 main-content">
+            <img src="{%static 'images/home1.jpg' %}" alt="E-book">
+        </div>
+        <div class="col-md-6 main-content">
+            <span class="content-text">
+                Unable to go to library? Just subscribe and start reading in your device.
+            </span>
+        </div>
+        <div class="col-md-6 main-content">
+            <span class="content-text">
+                Bored of reading? Just subscribe and start listening.
+            </span>
+        </div>
+        <div class="col-md-6 main-content">
+            <img src="{%static 'images/home2.jpg' %}" alt="Audiobook">
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="register-form-container">
+        <h1><i class="fa fa-user" aria-hidden="true"></i></h1>
+        <h1>Welcome back!</h1>
+        <p>Don't have an account? <a href="/accounts/signup">Register</a></p>
+
+        {% include '../includes/messages.html' %}
+        
+        <form action="signin" method="POST" class="form" id="loginForm">
+            {% csrf_token %}
+            <div class="form-group my-4">
+                <label>Email</label>
+                {{signInForm.email}}
+            </div>
+            <div class="form-group my-4">
+                <label>Password</label>
+                {{signInForm.password}}
+            </div>
+            <div class="form-group my-4">
+                <button class="btn btn-outline-success submit-button">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
